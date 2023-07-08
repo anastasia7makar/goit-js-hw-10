@@ -5,10 +5,12 @@ const BREEDS_END_POINT = 'breeds';
 const SEARCH_END_POINT = 'images/search';
 const param = 'breed_ids';
 
+axios.defaults.baseURL = BASE_URL;
+
 export function fetchBreeds() {
-  return axios.get(`${BASE_URL}${BREEDS_END_POINT}`);
+  return axios.get(`${BREEDS_END_POINT}`);
 }
 
 export function fetchCatByBreed(breedId) {
-    return axios.get(`${BASE_URL}${SEARCH_END_POINT}?${param}=${breedId}`)
+    return axios.get(`${SEARCH_END_POINT}?${param}=${breedId}`)
 }
